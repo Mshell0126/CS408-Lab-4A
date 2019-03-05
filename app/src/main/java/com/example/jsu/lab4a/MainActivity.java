@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import android.widget.*;
+import android.content.Intent;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -26,6 +29,34 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    public void onClick(View b){
+        String id = (b.getResources().getResourceName(b.getId())).split("/")[1];
+        switch(id){
+
+            case "bTipConverter":
+                Intent tip = new Intent(this, TipCalculator.class);
+                startActivity(tip);
+
+                break;
+
+            case "bDistanceConversion":
+                Intent dist = new Intent(this, DistanceConverter.class);
+                startActivity(dist);
+
+                break;
+
+            case "bTemperatureConversion":
+                Intent temp = new Intent(this, TempConverter.class);
+                startActivity(temp);
+
+                break;
+
+            default:
+
+        }
+
     }
 
     @Override
