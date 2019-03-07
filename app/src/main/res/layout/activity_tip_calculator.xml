@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TipCalculator">
+    tools:context=".TipCalculator"
+    tools:layout_editor_absoluteY="81dp">
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline3"
@@ -24,110 +25,94 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="44dp"
-        android:layout_marginTop="8dp"
         android:text="@string/BackButtonText"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="427dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/TotalBillLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="4dp"
         android:text="@string/Total_Bill_Caption"
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="74dp" />
 
     <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
+        android:id="@+id/TotalBill"
+        android:layout_width="157dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:importantForAutofill="no"
-        android:inputType="textPersonName|numberDecimal"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="83dp" />
+        android:inputType="numberDecimal"
+        tools:layout_editor_absoluteX="200dp"
+        tools:layout_editor_absoluteY="59dp" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/TipPercentageLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:text="@string/Tip_Percentage_Caption"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        tools:layout_editor_absoluteY="209dp" />
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="248dp" />
 
     <EditText
-        android:id="@+id/editText4"
-        android:layout_width="wrap_content"
+        android:id="@+id/TipPercentage"
+        android:layout_width="155dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:ems="10"
         android:importantForAutofill="no"
-        android:inputType="textPersonName|numberDecimal"
-        app:layout_constraintEnd_toStartOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        android:inputType="numberDecimal"
+        tools:layout_editor_absoluteX="202dp"
+        tools:layout_editor_absoluteY="233dp" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/CalculatedTipLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:text="@string/Tip_Output_Caption"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        tools:layout_editor_absoluteY="348dp" />
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="332dp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/CalculatedTip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
+        android:text="@string/MonetarySymbol"
         android:textSize="30sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        tools:layout_editor_absoluteX="340dp"
+        tools:layout_editor_absoluteY="314dp" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="8dp"
-        android:layout_height="wrap_content"
-        android:text="@string/PercentSign"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/editText4"
-        tools:layout_editor_absoluteY="247dp" />
-
-    <TextView
-        android:id="@+id/textView6"
+    <Button
+        android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:text="@string/MonetarySymbol"
-        app:layout_constraintEnd_toStartOf="@+id/editText3"
-        tools:layout_editor_absoluteY="95dp" />
+        android:onClick="calculateButton"
+        android:text="@string/CalculateButtonText"
+        tools:layout_editor_absoluteX="242dp"
+        tools:layout_editor_absoluteY="423dp" />
 
-    <TextView
-        android:id="@+id/textView7"
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/MonetarySymbol"
-        app:layout_constraintEnd_toStartOf="@+id/textView5"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/guideline3"
-        tools:layout_editor_absoluteY="380dp" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="32dp" />
+
+    <TextView
+        android:id="@+id/NumberOfPeopleLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:text="@string/NumberOfPeople"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="161dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="192dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="165dp"
+        tools:layout_editor_absoluteY="151dp" />
+
 </android.support.constraint.ConstraintLayout>
