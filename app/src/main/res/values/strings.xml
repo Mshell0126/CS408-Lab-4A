@@ -9,7 +9,12 @@
     <string name="Tip_Output_Caption">Calculated Tip Per Person:</string>
     <string name="Tip_Percentage_Caption">Tip Percentage:</string>
     <string name="Total_Bill_Caption">Total Bill:</string>
-    <string name="MonetarySymbol">$</string>
+    <string name="MonetarySymbol">$%1$s</string>
     <string name="PercentSign">%</string>
-
+    <string name="CalculateButton">Calculate</string>
+    <string name="NumberOfBills">No. of Checks:</string>
+    <string name="degreesC">\u00B0C</string>
+    <string name="degreesF">\u00B0F</string>
+    <string name="miles">mi.</string>
+    <string name="kilometers">km</string>
 </resources>
