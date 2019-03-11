@@ -26,6 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="4dp"
+        android:onClick="backButton"
         android:text="@string/BackButtonText"
         app:layout_constraintBottom_toTopOf="@+id/guideline12"
         app:layout_constraintStart_toStartOf="@+id/guideline7" />
@@ -45,57 +46,57 @@
         app:layout_constraintGuide_end="32dp" />
 
     <TextView
-        android:id="@+id/MilesLabel"
+        android:id="@+id/FahrenheitLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/degreesF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/CelsiusLabel"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Fahrenheit"
+        app:layout_constraintTop_toTopOf="@+id/guideline11" />
+
+    <EditText
+        android:id="@+id/Fahrenheit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/FahrenheitLabel"
+        app:layout_constraintEnd_toStartOf="@+id/FahrenheitLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/guideline7" />
+
+    <TextView
+        android:id="@+id/CelsiusLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="@string/degreesC"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/CalculateTempButton"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/Miles"
-        tools:layout_editor_absoluteY="131dp" />
+        app:layout_constraintStart_toEndOf="@+id/Celsius"
+        app:layout_constraintTop_toBottomOf="@+id/FahrenheitLabel" />
 
     <EditText
-        android:id="@+id/Miles"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/Kilometers"
-        app:layout_constraintEnd_toStartOf="@+id/MilesLabel"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toTopOf="@+id/guideline11" />
-
-    <TextView
-        android:id="@+id/KilometersLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="@string/degreesF"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline8"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/Kilometers"
-        tools:layout_editor_absoluteY="271dp" />
-
-    <EditText
-        android:id="@+id/Kilometers"
+        android:id="@+id/Celsius"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/KilometersLabel"
+        app:layout_constraintBaseline_toBaselineOf="@+id/CelsiusLabel"
+        app:layout_constraintEnd_toStartOf="@+id/CelsiusLabel"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="@+id/guideline7"
-        tools:layout_editor_absoluteY="262dp" />
+        app:layout_constraintStart_toStartOf="@+id/guideline7" />
 
     <Button
         android:id="@+id/CalculateTempButton"
@@ -103,6 +104,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="4dp"
+        android:onClick="calculateTemp"
         android:text="@string/CalculateButton"
         app:layout_constraintBottom_toTopOf="@+id/guideline12"
         app:layout_constraintEnd_toStartOf="@+id/guideline8" />

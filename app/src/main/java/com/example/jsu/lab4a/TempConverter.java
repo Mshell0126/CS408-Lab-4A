@@ -15,16 +15,21 @@ public class TempConverter extends AppCompatActivity {
     }
 
     public void calculateTemp(View v){
-        EditText milesText = (EditText) findViewById(R.id.Miles);
+        EditText fahrenheit = findViewById(R.id.Fahrenheit);
 
-        EditText kilomText = (EditText) findViewById(R.id.Kilometers);
+        EditText celsius = findViewById(R.id.Celsius);
 
-        if(milesText.getText().toString().isEmpty()){
-            if(!kilomText.getText().toString().isEmpty()){
-                double miles = Double.parseDouble(milesText.getText().toString());
-                double kilom = Double.parseDouble(kilomText.getText().toString());
-
+        if(fahrenheit.getText().toString().isEmpty()){
+            if(!celsius.getText().toString().isEmpty()){
+                double c = Double.parseDouble(celsius.getText().toString());
+                double f = (c * 9 / 5) + 32;
+                fahrenheit.setText(getString(R.string.numberToString, f));
             }
+        }
+        else{
+            double f = Double.parseDouble(fahrenheit.getText().toString());
+            double c = (f - 32) * 5 / 9;
+            celsius.setText(getString(R.string.numberToString, c));
         }
 
     }
